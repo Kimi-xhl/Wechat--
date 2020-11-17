@@ -1,0 +1,44 @@
+<!--miniprogram/pages/daily_questions/daily_questions.wxml-->
+<!-- <text>{{current+1}}/20</text> -->
+<view class="container">
+<view class="question-panel">
+<!-- <i-icon type='return' size='20' color='#ffffff'></i-icon> -->
+<i-panel  title="{{current+1}}/{{questionList.length}}" hide-border="true" >
+  <view class="question">{{questionList[current].question}}</view>
+</i-panel>
+<!-- <view wx:for="{{questionList[current].options}}" wx:key="_id">
+<i-button>{{item.content}}</i-button>
+</view> -->
+
+<!-- answer[7].answer = A|B|C|D -->
+<!-- answer[7].selectAnswer = A|B|C|D -->
+<view wx:for="{{questionList[current].options}}" wx:key="_id">
+  <button class="question-button {{questionList[current].selectAnswer && item.option==questionList[current].answer?'correct-answer':''}} {{item.option==questionList[current].selectAnswer && item.option!=questionList[current].answer ? 'wrong-answer':''}}" shape="circle" bindtap='onSelectAnswer'  id="{{item.option}}">
+  <view class="button-text">
+  <!-- {{item}} -->
+  {{item.option + ' . ' +  item.content}}
+  </view>
+  </button>
+</view>
+<scroll-view scroll-y class="explaination" bindscroll="scroll" scroll-top="" wx:if="{{questionList[current].selectAnswer}}">
+  <text style="word-wrap: break-word ;">{{questionList[current].remark}}</text>
+</scroll-view>
+
+<view  wx:if="{{current==questionList.length-1 && questionList[current].selectAnswer}}"bindtap='submit' class='sumbitText'>提交</view>
+</view>
+
+<view class="page-panel">
+<i-page current="{{ current+1 }}" total="{{questionList.length}}"  bind:change="handleChangePage" simple="true" i-class="page-seletor">
+    <view slot="prev">
+        <i-icon type="return"></i-icon>
+        上一题
+    </view>
+    <view slot="next">
+        下一题
+        <i-icon type="enter"></i-icon>
+    </view>
+</i-page>
+</view>
+
+<i-toast id="toast" />
+</view>

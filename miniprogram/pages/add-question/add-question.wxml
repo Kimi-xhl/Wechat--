@@ -1,0 +1,80 @@
+<view class='outer'>
+  <view class='return' bindtap='returnMain'>
+    <i-icon type='return' size='25' color='#ffffff'></i-icon>
+    <text>返回</text>
+
+
+  </view>
+  <button class='addButton' bindtap='chooseFile'>导入</button>
+
+  <!-- </view> -->
+  <!-- </view> -->
+  <view class='main'>
+    <scroll-view class='questionlist' scroll-y='true'>
+      <i-cell-group>
+        <!-- title="{{index<9 ? '0'+(index+1) : index+1}}.{{item.question}}"  -->
+        <i-cell wx:for='{{questionList}}' title="{{index+1+(page-1)*rows}}.{{item.question}}" bindtap='showQuestion' data-question='{{item}}'></i-cell>
+      </i-cell-group>
+    </scroll-view>
+    <view class='pageClum'>
+      <view class='pre'>
+        <text bindtap='pre'>上一页</text>
+      </view>
+      <view class='pageNum'>
+        <text bindtap='powerDrawer' data-status="open">{{page}}/{{pageTotal}}</text>
+      </view>
+      <view class='next'>
+        <text bindtap='next'>下一页</text>
+      </view>
+    </view>
+  </view>
+  <view>
+    <!-- 下拉抽屉 -->
+    <view class="drawer_screen" wx:if="{{showModalstatuss}}"></view>
+    <!--content-->
+    <!--使用animation属性指定需要执行的动画-->
+    <view animation="{{animationData}}" class="drawer_attr_box" wx:if="{{showModalstatuss}}">
+      <!--drawer content-->
+      <view class="drawer_content">
+        <view class='header'>
+          <i-icon type='close' size='25' bindtap="powerDrawer" data-status="close"></i-icon>
+        </view>
+        <i-divider i-class="litle-height"></i-divider>
+        <input class="inputbox" placeholder="请输入跳转页码" bindinput='inputPage' type='number' focus='true' />
+        <button class="jump" bindtap='jump'>跳转</button>
+      </view>
+    </view>
+  </view>
+  <i-toast id="toast" />
+  <view class=" zan-dialog {{ showDialog ? 'zan-dialog--show' : '' }}">
+    <view class="zan-dialog__mask" bindtap="toggleDialog" />
+    <view class="zan-dialog__container addFileView">
+      <!-- <view class='addFileView'wx:if='{{showAddView}}'> -->
+      <!-- <i-icon i-class='icon' type='add' size='20' color='#000000' bindtap="chooseFile"></i-icon> -->
+      <i-divider i-class='litle-height'></i-divider>
+      <view class='fileView'>
+        <text>文件</text>
+        <text class='fileName'>{{fileName}}</text>
+      </view>
+      <button class='importButton' bindtap='doUpload'>导入</button>
+    </view>
+  </view>
+
+  <view class="zan-dialog {{ showQuestion ? 'zan-dialog--show' : '' }}">
+    <view class="zan-dialog__mask" bindtap="closeQuestion" />
+    <scroll-view class="question-detail" scroll-y='true'>
+      <view style='padding:50rpx 50rpx;'>
+        <view class='question-detail-text'>题目:{{selectQuestion.question}}</view>
+        <view class='question-detail-text' wx:if="{selectQuestion.options[0].content!=''}">A:{{selectQuestion.options[0].content}}</view>
+        <view class='question-detail-text' wx:if="{selectQuestion.options[1].content!=''}">B:{{selectQuestion.options[1].content}}</view>
+        <view class='question-detail-text' wx:if="{selectQuestion.options[2].content!=''}">C:{{selectQuestion.options[2].content}}</view>
+        <view class='question-detail-text' wx:if="{selectQuestion.options[3].content!=''}">D:{{selectQuestion.options[3].content}}</view>
+        <view class='question-detail-text'>答案：{{selectQuestion.answer}}</view>
+        <view class='question-detail-text'>解析:{{selectQuestion.remark}}</view>
+        <view class='question-detail-text'>导入时间：{{selectQuestion.createDate}}</view>
+        <!-- <button bindtap='toggleDialog'>关闭</button> -->
+        <!-- <text>{{selectCourseImformation.overdue_time}}</text> -->
+      </view>
+    </scroll-view>
+  </view>
+</view>

@@ -1,0 +1,52 @@
+/* miniprogram/pages/login/login.wxss */
+
+page {
+  background-color: gray;
+  height: 100%;
+  width: 100%;
+  
+}
+
+.main {
+  /* display:inline-block; */
+  width: 90%;
+  height: 42%;
+  margin-top: 50%;
+  align-items: center;
+  text-align: center;
+  margin-left: 5%;
+  background-color: #f2f2f2;
+
+  position: relative;
+}
+
+.title {
+  width: 100%;
+}
+.litle-height {
+  height: 10px !important;
+  color: #000000!important;
+}
+.input-view{
+  margin: 10px 20px;
+  border: 1px solid black;
+  font-size: 16px;
+}
+.bindbutton{
+width: 30%;
+height: 36px!important;
+margin: auto!important;
+}
+.bottomtext{
+  color:#0099FF;
+  margin-top: 10px;
+  font-size: 15px;
+}
+
+.bottomtext text{
+  margin:0px 5px;
+  font-size: 14px;
+}
+.noShow{
+  display: none
+}

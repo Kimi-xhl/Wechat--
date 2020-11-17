@@ -1,0 +1,20 @@
+<view class="list-container">
+  <view class='return' bindtap='returnMain'>
+    <i-icon type='return' size='25' color='#ffffff'></i-icon>
+    <text>返回</text>
+  </view>
+  <view class="c-minheight wx-view_title list-header" data-c_e_id="wx_view4cac8005">
+    <text class="c-block wx-text_title " data-c_e_id="wx_text422e0c70">学号</text>
+    <text class="c-block wx-text_point" data-c_e_id="wx_textd0779b1b">积分</text>
+    <text class="c-block wx-text_time" data-c_e_id="wx_text6df7f8b6">时间</text>
+  </view>
+  <i-divider i-class="litle-height"></i-divider>
+  <scroll-view class=" wx-scroll-view_zYoxuZ" lower-threshold="50" scroll-y="True" style="overflow-x: hidden; overflow-y: auto;" upper-threshold="50">
+    <view class=" wx-view_title" wx:for="{{studentList}}" wx:key="school_no" wx:index="index" style='height:30px'>
+    <text class='index' >{{index<9 ? '00'+(index+1) : index+1}}.</text>
+      <text class="c-block wx-text_school_no" data-c_e_id="wx_text58a802c6">{{item.account}}</text>
+      <text class="c-block wx-text_point" data-c_e_id="wx_text1808ec36">{{item.integral}}</text>
+      <text class="c-block wx-text_time" data-c_e_id="wx_text7da3b02b">{{item.study_time}}</text>
+    </view>
+  </scroll-view>
+</view>

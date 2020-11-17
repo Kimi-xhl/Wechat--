@@ -1,0 +1,15 @@
+<!--miniprogram/pages/login/login.wxml-->
+<view class='main'>
+<view class='return'>
+<i-icon type='return' size='30' color='#ffffff'/>
+<view style='color:#fff;'>返回</view>
+</view>
+<view class='title'>修改密码</view>
+ <i-divider i-class="litle-height"></i-divider>
+ <i-input i-class='input-view' value="" placeholder="请输入原密码" auto-focus='true' />
+ <i-input value="" placeholder="请输入新密码" i-class='input-view' />
+<i-input value="" placeholder="请再次输入新密码" i-class='input-view' />
+  <i-button i-class="bindbutton" bind:click="handleClick" type="primary">确定</i-button>
+<view class='tip' style='visibility:{{isShow}}'>修改密码成功</view>
+</view>
+

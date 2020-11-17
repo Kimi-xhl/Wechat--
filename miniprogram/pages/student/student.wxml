@@ -1,0 +1,102 @@
+<view bindtouchmove="tap_drag" bindtouchstart="tap_start" class='outer' bindtouchend="tap_end">
+  <view class='header'>
+    <view bindtap='toggleLeft'>
+      <open-data class="userinfo-avatar" type="userAvatarUrl"></open-data>
+    </view>
+    <text class='account'>{{account}}</text>
+  </view>
+
+  <view class="classView">
+    <text>我的课程</text>
+    <i-divider i-class="litle-height"></i-divider>
+    <scroll-view scroll-y='true' style='max-height:250px' bindscrolltoupper='upper' bindscrolltolower='bottom'>
+      <!-- <view class='no-course'>{{courseList.length==0}}</view> -->
+      <view class='no-course' wx:if="{{courseList.length==0}}">暂无课程</view>
+      <view class="className" wx:for="{{courseList}}" wx:if='{{item.course_status==0}}'>
+
+        <view bindtap="intoStudy" data-course='{{item}}'>{{item.course_name}}</view>
+        <i-icon type='other' size='25' bindtap='openMune' data-course='{{item}}'></i-icon>
+      </view>
+    </scroll-view>
+    <i-divider i-class="litle-height"></i-divider>
+    <view class='addClass' bindtap="powerDrawer" data-status="open">+添加课程</view>
+  </view>
+
+  <!-- 侧滑页：个人中心 -->
+<view>
+  <i-drawer i-class="drawer" mode="left" visible="{{showMenuBar}}" mask-closable="false" mask="false">
+    <view class='drawer_view'>
+      <view class="drawer_head">
+        <open-data class="userinfo-avatar" type="userAvatarUrl"></open-data>
+        <text class='text_school_no'>账号：{{account}}</text>
+        <i-icon type="enter" color="#ffffff" size="25" bindtap='toggleLeft' />
+      </view>
+      <view>
+        <view class='drawerItem' bindtap='allCourse'>历史课程</view>
+        <view class='drawerItem' bindtap='toChangeAccount'>修改信息</view>
+      </view>
+    </view>
+  </i-drawer>
+</view>
+</view>
+<i-toast id="toast" />
+
+
+<!-- 课程详情 -->
+<view class="zan-dialog {{ showDialog ? 'zan-dialog--show' : '' }}">
+  <view class="zan-dialog__mask" bindtap="toggleDialog" />
+  <view class="zan-dialog__container">
+    <view style='padding:100rpx 50rpx;'>
+      <text>课程名：{{selectCourse.course_name}}\n</text>
+      <text>课程号：{{selectCourse.course_no}}\n</text>
+      <text>班级号：{{selectCourse.class_no}}\n</text>
+      <text>课程教师：{{selectCourse.course_tea}}\n</text>
+      <text>课程积分：{{selectCourse.integral}}\n</text>
+      <text>加入时间：{{selectCourse.create_time}}\n</text>
+      <!-- <button bindtap='toggleDialog'>关闭</button> -->
+      <!-- <text>{{selectCourseImformation.overdue_time}}</text> -->
+    </view>
+  </view>
+</view>
+
+
+<!-- 下拉抽屉 -->
+<view class="drawer_screen" wx:if="{{showModalstatuss}}"></view>
+<!--content-->
+<!--使用animation属性指定需要执行的动画-->
+<view animation="{{animationData}}" class="drawer_attr_box" wx:if="{{showModalstatuss}}">
+  <!--drawer content-->
+  <view class="drawer_content">
+    <view class='header'>
+      <i-icon type='close' size='25' bindtap="powerDrawer" data-status="close"></i-icon>
+      <view class='accomplish' bindtap='search'>完成</view>
+    </view>
+    <i-divider i-class="litle-height"></i-divider>
+    <input class="inputbox" placeholder="请输入课程邀请码" bindinput='invitationCode' focus='true' type='number' />
+    <view class='classInformation {{showClassInformation?"" :"noShow"}}'>
+      <view class='information'>
+        <text class='informationClumName'>课程名：</text>
+        <text>{{getCourseInformation.course_name}}</text>
+      </view>
+      <view class='information'>
+        <text class='informationClumName' space="emsp">教 师：</text>
+        <text>{{getCourseInformation.course_tea}}</text>
+      </view>
+      <view class='information'>
+        <text class='informationClumName'>课程号：</text>
+        <text>{{getCourseInformation.course_no}}</text>
+      </view>
+       <view class='information'>
+        <text class='informationClumName' space="emsp">班 级：</text>
+        <text>{{getCourseInformation.class_no}}</text>
+      </view>
+      <i-button i-class="joinButton" bindtap='joinButton' type='primary'>加入课程</i-button>
+    </view>
+  </view>
+</view>
+<!-- 课程操作菜单 -->
+<i-action-sheet visible="{{ visible }}" actions="{{ items }}" show-cancel bind:cancel="closeMune" bind:click="clickItem" mask-closable="{{false}}">
+  <view slot="header" style="padding: 16px">
+    <view style="color: #444;font-size: 16px">{{selectCourse.course_name}}</view>
+  </view>
+</i-action-sheet>

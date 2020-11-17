@@ -1,0 +1,40 @@
+<view>
+  <!-- <view class='return' bindtap='returnTea'>
+    <i-icon type='return' size='25' color='#ffffff'></i-icon>
+    <text>返回</text>
+  </view> -->
+  <view class='header'>
+    <text name='course_name'>课程名称</text>
+    <text>课程状态</text>
+  </view>
+  <!-- <i-divider i-class="litle-height"></i-divider> -->
+  <view class='divider'></view>
+  <scroll-view scroll-y='true' style='max-height:330px' bindscrolltoupper='upper' bindscrolltolower='bottom'>
+    <view class='no-course' wx:if="{{courseList.length==0}}">暂无课程</view>
+    <i-cell-group wx:for="{{courseList}}">
+      <i-cell  wx:if='{{item.course_status!=3}}' i-class='cell-style' title="{{item.course_name}}" data-course='{{item}}' value="{{item.course_status==0?'正常':item.course_status==1?'退出':'解散'}}" bindlongtap='deleteCourse' bindtap='showCourseDetail' bindtouchend='touchend'></i-cell>
+    </i-cell-group>
+  </scroll-view>
+  <view class='course-bottom'></view>
+
+  <!-- 课程详情 -->
+  <view class="zan-dialog {{ showDialog ? 'zan-dialog--show' : '' }}">
+    <view class="zan-dialog__mask" bindtap="toggleDialog" />
+    <view class="zan-dialog__container">
+      <view class='course-dateil'>
+        <text>课程名：{{selectCourseImformation.course_name}}\n</text>
+        <text>课程号：{{selectCourseImformation.course_no}}\n</text>
+        <text>班级号：{{selectCourseImformation.class_no}}\n</text>
+        <text wx:if='{{selectCourseImformation.user_type==0}}'>授课老师：{{selectCourseImformation.course_tea}}\n</text>
+        <text wx:if='{{selectCourseImformation.user_type==0}}'>积分：{{selectCourseImformation.integral}}\n</text>
+        <text>班级人数：{{selectCourseImformation.studentCount}}\n</text>
+        <text>邀请码：{{selectCourseImformation.invitation_code}}\n</text>
+        <text wx:if='{{selectCourseImformation.user_type==1}}'>创建时间：{{selectCourseImformation.create_time}}\n</text>
+        <text wx:if='{{selectCourseImformation.user_type==0}}'>加入时间：{{selectCourseImformation.create_time}}\n</text>
+        <text wx:if='{{selectCourseImformation.course_status==2}}'>解散时间：{{selectCourseImformation.dismiss_time}}\n</text>
+        <text wx:if='{{selectCourseImformation.course_status==1}}'>退出时间：{{selectCourseImformation.exit_time}}\n</text>
+
+      </view>
+    </view>
+  </view>
+</view>

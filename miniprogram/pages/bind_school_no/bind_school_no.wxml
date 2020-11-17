@@ -1,0 +1,12 @@
+<!--miniprogram/pages/bind_school_no/bind_school_no.wxml-->
+<view style='margin-top:10px'>
+  <i-icon type='return' size='30' color='#80848f' />
+  <text>返回</text>
+</view>
+<view style='text-align:center;margin-top:50px'>
+  <text>绑定学号</text>
+  <i-divider i-class="litle-height"></i-divider>
+  <i-input i-class="input-border" value="{{ value2 }}" type="number" mode="wrapped"  placeholder="学号" />
+  <i-input i-class="input-border"value="{{ value1 }}" mode="wrapped" autofocus placeholder="姓名" />
+ <i-button i-class="button-size" bind:click="" type="primary" size="small">绑定</i-button>
+</view>

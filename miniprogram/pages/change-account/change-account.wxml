@@ -1,0 +1,12 @@
+<!--miniprogram/pages/bind_school_no/bind_school_no.wxml-->
+<!-- <view style='margin-top:10px'>
+  <i-icon type='return' size='30' color='#80848f' />
+  <text>返回</text>
+</view> -->
+<view style='text-align:center;margin-top:50px'>
+  <text>修改信息</text>
+  <i-divider i-class="litle-height"></i-divider>
+  <input class="input-border"  type="number"   placeholder="请输入新学号" bindinput='newAccount' />
+  <input class="input-border"  autofocus placeholder="请输入新姓名" bindinput='newName' />
+ <i-button i-class="button-size" bind:click="changeAccount" type="primary" size="small">确定</i-button>
+</view>

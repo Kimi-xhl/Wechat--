@@ -1,0 +1,102 @@
+/**index.wxss**/
+
+.litle-padding {
+  padding: 1px 1px !important;
+}
+
+.litle-height {
+  height: 8px !important;
+}
+
+.integral-panel {
+  height: 10px;
+}
+
+.blank {
+  height: 30px;
+}
+
+.practice-button-panel {
+  position: absolute;
+  bottom: 20px;
+  text-align: center;
+  width: 100%;
+}
+
+/* .practice-button-panel button{
+  position: relative;
+  bottom: 0px;
+} */
+
+.practice-button {
+  /* width: 50%; */
+  margin-left: 15% !important;
+  margin-right: 15% !important;
+  /* position: relative !important; */
+}
+
+page {
+  /* background: #f6f6f6; */
+   background-color: #EEEBE6;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.userinfo-avatar {
+  width: 70rpx;
+  height: 70rpx;
+  margin-left: 15px;
+  margin-right: 10px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.view_level {
+  display: -webkit-inline-flex;
+  margin: 20rpx 0;
+  vertical-align: middle;
+}
+
+.level_text {
+  color: rgb(130, 212, 253);
+  margin-left: 5px;
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+.drawer {
+  width: 100% !important;
+  height: 100% !important;
+  /* left: 50%!important; */
+}
+
+.drawer_view {
+  display: -webkit-inline-flex;
+  margin-bottom: 5px;
+  background-color: white;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 30%;
+  width: 70%;
+  height: 100%;
+  /* width: 224px;
+  height: 450px; */
+}
+
+.text_school_no {
+  text-align: left;
+  margin-top: 5px;
+  color: white;
+  width: 70%;
+}
+
+.drawer_head {
+  display: -webkit-inline-flex;
+  vertical-align: middle;
+  align-items: center;
+  background-color:#00CCFF;
+  width: 100%;
+  height: 20%;
+}

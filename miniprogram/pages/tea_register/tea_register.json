@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "i-divider": "/components/iview/divider/index",
+    "i-input": "/components/iview/input/index",
+    "i-panel": "/components/iview/panel/index",
+    "i-button": "/components/iview/button/index",
+    "i-toast": "/components/iview/toast/index"
+  }
+}

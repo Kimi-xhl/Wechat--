@@ -1,0 +1,12 @@
+<!--miniprogram/pages/login/login.wxml-->
+<view class='main'>
+<view class='title'>注册</view>
+ <i-divider i-class="litle-height"></i-divider>
+ <input class='input-view' value="" placeholder="账号" bindinput='inputAccount' auto-focus='true'  />
+ <input value="" placeholder="密码" class='input-view' bindinput='inputPasswd' type='password'  />
+ <input value="" placeholder="确认密码" class='input-view' bindinput='inputPasswd2' type='password' />
+ <i-button i-class="bindbutton" bind:click="registerTeacher" type="primary">注册</i-button>
+<view class='bottomtext' bindtap='jump'>教师登录</view>
+<i-toast id="toast" />
+</view>
+

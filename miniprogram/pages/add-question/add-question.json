@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "i-icon": "/components/iview/icon/index",
+    "i-divider": "/components/iview/divider/index",
+    "i-toast": "/components/iview/toast/index",
+    "i-cell": "/components/iview/cell/index",
+    "i-cell-group": "/components/iview/cell-group/index",
+    "i-page": "/components/iview/page/index",
+    "i-action-sheet": "/components/iview/action-sheet/index"
+  }
+}

@@ -1,0 +1,11 @@
+{
+"usingComponents": {
+  "i-card": "/components/iview/card/index",
+  "i-cell-group": "/components/iview/cell-group/index",
+  "i-cell": "/components/iview/cell/index",
+  "i-button": "/components/iview/button/index",
+  "i-divider": "/components/iview/divider/index",
+  "i-icon": "/components/iview/icon/index",
+    "i-input": "/components/iview/input/index"
+}
+}

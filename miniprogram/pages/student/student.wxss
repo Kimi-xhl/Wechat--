@@ -1,0 +1,223 @@
+.userinfo-avatar {
+  width: 70rpx;
+  height: 70rpx;
+  margin-left: 15px;
+  margin-right: 10px;
+  border-radius: 50%;
+  overflow: hidden;
+
+}
+page{
+  background-color: #EEEBE6;
+}
+.account{
+ size: 15px;
+}
+.header{
+  display: -webkit-flex;
+  align-items: center;
+  margin-top: 10px;
+  /* margin-bottom: 50px; */
+}
+.header view{
+  display: flex;
+}
+.classView{
+ width: 90%!important;
+ margin: auto!important;
+ margin-top: 50px!important;
+ background-color: white;
+ border-radius: 10px;
+ text-align: center;
+ padding-top: 20px;
+}
+
+.className{
+  text-align: left;
+  display:flex;
+  font-size: 17px;
+  margin:10px;
+}
+.className view{
+  width: 80%;
+}
+.litle-height {
+  height: 8px !important;
+ 
+}
+.addClass{
+  color: #00CCFF;
+ padding: 15px;
+}
+.drawer_screen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background: #000;
+  opacity: 0.2;
+  overflow: hidden;
+}
+/*content*/
+.drawer_attr_box {
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  height: 70%;
+  left: 0;
+  z-index: 1001;
+  background: #fff;
+}
+.drawer_content {
+  padding: 20rpx 40rpx;
+  height: 100%;
+  overflow-y: scroll;
+}
+.accomplish{
+   color: #00CCFF;
+   margin-left: 80%;
+   /* text-align: right!important; */
+}
+.inputbox{
+border: 1px solid black;
+margin-top: 20px;
+ margin-bottom: 40px;
+}
+.classInformation{
+  border: 1px solid black;
+  border-radius: 10px;
+  text-align: left;
+  margin: auto;
+  padding: 15px 0px;
+  width: 80%;
+}
+.informationClumName{
+margin-left: 10px;
+margin-right: 20px;
+}
+.information{
+  margin-bottom: 15px;
+  text-align: left;
+}
+.joinButton{
+  border-radius: 10px!important;
+  width: 100px;
+  height: 40px!important;
+ margin: auto!important;
+ margin-top: 40px!important;
+}
+.drawer {
+  width: 100% !important;
+  height: 100% !important;
+  /* left: 50%!important; */
+}
+
+.drawer_view {
+  
+  margin-bottom: 5px;
+  background-color: white;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 30%;
+  width: 70%;
+  height: 100%;
+  /* width: 224px;
+  height: 450px; */
+}
+
+
+.drawer_head {
+  display: -webkit-inline-flex;
+  vertical-align: middle;
+  align-items: center;
+  background-color:#00CCFF;
+  margin-bottom: 50px;
+  width: 100%;
+  height: 20%;
+}
+
+.drawerItem{
+  padding:15px;
+  font-size: 18px;
+  border: 1px dashed  #000 ;
+  border-width: 0px 0px 1px 0px;
+}
+
+
+.text_school_no {
+  text-align: left;
+  margin-top: 5px;
+  color: white;
+  width: 70%;
+}
+
+.drawer_head {
+  display: -webkit-inline-flex;
+  vertical-align: middle;
+  align-items: center;
+  background-color:#00CCFF;
+  width: 100%;
+  height: 20%;
+}
+.classOption{
+  margin: 0px 15px;
+  color: red;
+  font-size: 15px;
+}
+.noShow{
+  display: none
+}
+
+/* 课程信息弹窗样式 */
+.zan-dialog__mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.5);/*设置阴影半透明背景如： background: rgba(0, 0, 0, 0.4);*/
+  display: none;
+}
+
+.zan-dialog__container {
+  position: fixed;
+  bottom: 400rpx;
+  width: 650rpx;/*弹窗布局宽*/
+  height: 500rpx;/*弹窗布局高，与下面弹出距离transform有关*/
+  margin-left: 50rpx;
+  background: #f8f8f8;
+  transform: translateY(300%);/*弹框弹出距离，与弹框布局高度有关，如300%表示弹起距离为3倍弹窗高度*/
+  transition: all 0.4s ease;
+  z-index: 12;
+  border-radius: 20rpx;
+  box-shadow: 0px 3px 3px 2px gainsboro;/*弹框的悬浮阴影效果，如不需要可注释该行*/
+}
+
+.zan-dialog--show .zan-dialog__container {
+  transform: translateY(0);
+}
+
+.zan-dialog--show .zan-dialog__mask {
+  display: block;
+}
+
+
+.no-course {
+  background-color: white;
+  text-align: center;
+  padding-top: 10px;
+  /* margin: 0px 20px; */
+}
+
+.index{
+  color: gray!important;
+}
+.outer{
+  height: 100%;
+  width: 100%;
+}

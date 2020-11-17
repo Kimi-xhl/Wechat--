@@ -1,0 +1,28 @@
+/* miniprogram/pages/bind_school_no/bind_school_no.wxss */
+
+page {
+  background: #eeece8;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.litle-height {
+  height: 8px !important;
+  color: #000 !important;
+  margin-left: 10%;
+  width: 80% !important;
+}
+
+.input-border {
+  border: 1px solid #000;
+  margin: 10px auto;
+  height: 20rpx;
+  width: 80%;
+}
+
+.button-size {
+  width: 30%;
+  margin-top: 40px !important;
+  margin-left: 35% !important;
+}

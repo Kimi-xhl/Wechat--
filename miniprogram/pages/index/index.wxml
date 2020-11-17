@@ -1,0 +1,40 @@
+<!--index.wxml-->
+<view>
+
+  <view class='view_level'>
+    <open-data class="userinfo-avatar" type="userAvatarUrl" ></open-data>
+    <view>
+      <text class='level_text'>LV.{{level}}</text>
+      <i-progress percent="{{percent}}" status="active" stroke-width="5" hide-info></i-progress>
+    </view>
+  </view>
+  <view>
+    <i-card title="积分排行" extra="积分">
+      <view slot="content" wx:for="{{integralList}}" wx:key="account">
+       <i-cell i-class="litle-padding" title="暂无人上榜" wx:if='{{!integralList.length}}'></i-cell>
+        <i-cell i-class="litle-padding" title="{{index<9 ? '0'+(index+1) : index+1}}.{{item.account}}" value="{{item.integral}}"></i-cell>
+      </view>
+      <view slot="footer">
+        <i-divider i-class="litle-height"></i-divider>
+        <i-cell i-class="litle-padding" title="我的排名：{{myIntegralRank?myIntegralRank:'未参与'}}" value="{{userIntegral}}"></i-cell>
+      </view>
+    </i-card>
+  </view>
+  <view class="blank"></view>
+  <view class="practice-button-panel">
+    <i-button type="primary" shape="circle" i-class='practice-button' bindtap='intoPractice'>每日一练</i-button>
+    <i-button type="ghost" shape="circle" i-class='practice-button' bindtap='intoIntellPractice'>智能答题</i-button>
+  </view>
+  <view>
+    <i-drawer i-class="drawer" mode="left" visible="{{showLeft2}}" mask-closable="false" mask="false">
+      <view class='drawer_view'>
+        <view class="drawer_head">
+          <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}"></image>
+          <text class='text_school_no'>账号：{{account}}</text>
+          <i-icon type="enter" color="#ffffff" size="25" bindtap='toggleLeft2' />
+        </view>
+
+      </view>
+    </i-drawer>
+  </view>
+</view>

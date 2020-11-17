@@ -1,0 +1,26 @@
+<!--miniprogram/pages/login/login.wxml-->
+<view class='main'>
+  <view  class="main {{isShow?'':'noShow'}}">
+  <view class='title'>绑定学号</view>
+  <i-divider i-class="litle-height"></i-divider>
+  <input class='input-view' value="" placeholder="学号"bindinput='inputAccount' focus='true' />
+  <input value="" placeholder="姓名" class='input-view' bindinput='inputName' />
+  <i-button i-class="bindbutton" bind:click="studentLogin" type="primary">绑定</i-button>
+  <view class='bottomtext' bindtap='switchView'>我是教师</view>
+  </view>
+
+<view  class="main {{!isShow?'':'noShow'}}">
+<view class='title'>教师注册</view>
+ <i-divider i-class="litle-height"></i-divider>
+ <input class='input-view' value="" placeholder="账号"  auto-focus='true' bindinput='inputAccount'  />
+ <input value="" placeholder="姓名" class='input-view'  bindinput='inputName'  />
+ <i-button i-class="bindbutton" bind:click="teacherLogin" type="primary">注册</i-button>
+
+<view class='bottomtext'>
+ <text bindtap='switchView'>我是学生</text> 
+  <!-- <text bindtap='jump'>教师注册</text> -->
+</view>
+</view>
+<i-toast id="toast" />
+</view>
+
